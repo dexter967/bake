@@ -14,6 +14,8 @@ if (heroCard && cakeCallout && cakeCalloutName && cakeImage) {
     { name: "Pistachio Rose", tint: "#e5e9cf" },
   ];
   const rotationDuration = 42000;
+  const sliceAngle = 360 / flavors.length;
+  const contactOffset = 8;
   let flavorIndex = -1;
 
   const showFlavor = (index) => {
@@ -30,7 +32,10 @@ if (heroCard && cakeCallout && cakeCalloutName && cakeImage) {
   const animateCake = (now) => {
     const elapsed = prefersReducedMotion ? 0 : now - startedAt;
     const rotation = (elapsed % rotationDuration) / rotationDuration * 360;
-    const nextFlavorIndex = Math.floor(rotation / (360 / flavors.length)) % flavors.length;
+    const contactAngle = (rotation + contactOffset) % 360;
+    const nextFlavorIndex = Math.floor(
+      (contactAngle + sliceAngle / 2) / sliceAngle
+    ) % flavors.length;
 
     cakeImage.style.transform = `rotate(${rotation}deg)`;
     if (nextFlavorIndex !== flavorIndex) {
