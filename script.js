@@ -6,16 +6,15 @@ const cakeImage = document.querySelector(".cake-plate img");
 
 if (heroCard && cakeCallout && cakeCalloutName && cakeImage) {
   const flavors = [
-    { name: "Blueberry Bliss", tint: "#dce7ed" },
-    { name: "Chocolate Truffle", tint: "#eadbcf" },
-    { name: "Red Velvet", tint: "#f4d8d0" },
-    { name: "Caramel Crunch", tint: "#f8e4c6" },
-    { name: "Strawberry White Forest", tint: "#f8dfe0" },
-    { name: "Pistachio Rose", tint: "#e5e9cf" },
+    { name: "Blueberry Bliss", tint: "#dce7ed", center: 0 },
+    { name: "Chocolate Truffle", tint: "#eadbcf", center: 300 },
+    { name: "Red Velvet", tint: "#f4d8d0", center: 240 },
+    { name: "Caramel Crunch", tint: "#f8e4c6", center: 180 },
+    { name: "Strawberry White Forest", tint: "#f8dfe0", center: 120 },
+    { name: "Pistachio Rose", tint: "#e5e9cf", center: 60 },
   ];
   const rotationDuration = 42000;
-  const sliceAngle = 360 / flavors.length;
-  const contactOffset = 8;
+  const labelContactAngle = 135;
   let flavorIndex = -1;
 
   const showFlavor = (index) => {
@@ -32,10 +31,16 @@ if (heroCard && cakeCallout && cakeCalloutName && cakeImage) {
   const animateCake = (now) => {
     const elapsed = prefersReducedMotion ? 0 : now - startedAt;
     const rotation = (elapsed % rotationDuration) / rotationDuration * 360;
-    const contactAngle = (rotation + contactOffset) % 360;
-    const nextFlavorIndex = Math.floor(
-      (contactAngle + sliceAngle / 2) / sliceAngle
-    ) % flavors.length;
+    const sourceAngle = (labelContactAngle - rotation + 360) % 360;
+    const nextFlavorIndex = flavors.reduce((closestIndex, flavor, index) => {
+      const distance = Math.abs(
+        ((sourceAngle - flavor.center + 540) % 360) - 180
+      );
+      const closestDistance = Math.abs(
+        ((sourceAngle - flavors[closestIndex].center + 540) % 360) - 180
+      );
+      return distance < closestDistance ? index : closestIndex;
+    }, 0);
 
     cakeImage.style.transform = `rotate(${rotation}deg)`;
     if (nextFlavorIndex !== flavorIndex) {
