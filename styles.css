@@ -323,23 +323,6 @@ h2 em {
   50% { opacity: 0.35; transform: rotate(-5deg) translateY(-4px); }
 }
 
-.rotate-hint {
-  position: absolute;
-  bottom: 1%;
-  left: 50%;
-  margin: 0;
-  color: rgba(59, 33, 28, 0.46);
-  font-size: 0.68rem;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
-
-.rotate-hint span {
-  margin-right: 5px;
-  color: var(--rose);
-  font-size: 1rem;
-}
-
 .hero-footer {
   position: absolute;
   right: 5%;
@@ -392,13 +375,15 @@ h2 em {
   .hero-stage { min-height: 100vh; }
   .hero-card {
     min-height: 100vh;
+    height: auto;
   }
   .site-header { padding-top: 20px; }
   .site-nav { display: none; }
   .hero-content {
     display: flex;
     flex-direction: column;
-    height: calc(100% - 100px);
+    height: auto;
+    padding-bottom: 90px;
     align-items: stretch;
   }
   .hero-copy { padding: 7vh 0 0; }
@@ -406,11 +391,15 @@ h2 em {
   .hero-subtitle { margin: 20px 0; }
   .hero-note { display: none; }
   .cake-showcase {
-    min-height: 330px;
-    transform: translateY(-2vh);
+    min-height: min(105vw, 430px);
+    margin-top: 2.5rem;
+    transform: none;
   }
-  .cake-orbit { width: min(84vw, 480px); }
-  .showcase-label { top: 0; }
+  .cake-orbit { width: min(86vw, 430px); }
+  .showcase-label {
+    top: -2.25rem;
+    right: 0;
+  }
   .cake-callout {
     top: 35%;
     left: 68%;
@@ -428,22 +417,15 @@ h2 em {
   .order-link { font-size: 0.68rem; }
   .cake-callout {
     top: 33%;
-    left: -13%;
+    left: 62%;
     min-width: 145px;
   }
   .cake-callout-name { font-size: 1.35rem; }
-  .cake-callout-arrow,
-  .cake-callout-fallback {
-    left: calc(100% - 12px);
-    width: 145px;
-    height: 88px;
-  }
-  .rotate-hint { bottom: -3%; }
+  .cake-showcase { margin-top: 3.5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero-card { transition: none; }
   .cake-plate,
   .cake-plate img { animation: none; }
   .cake-callout.is-changing .cake-callout-name { animation: none; }
