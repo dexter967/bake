@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Cake's World creates custom cakes made with care, color, and a little magic."
+    />
+    <title>The Cake's World | Custom cakes, made beautiful</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="hero-stage" aria-label="The Cake's World introduction">
+        <div class="hero-card">
+          <header class="site-header">
+            <a class="brand" href="#" aria-label="The Cake's World home">
+              <span class="brand-mark" aria-hidden="true">
+                <span class="cookie-dot dot-one"></span>
+                <span class="cookie-dot dot-two"></span>
+                <span class="cookie-dot dot-three"></span>
+                <span class="cookie-dot dot-four"></span>
+              </span>
+              <span>The Cake's World</span>
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+              <a href="#cakes">Our cakes</a>
+              <a href="#story">Our story</a>
+              <a href="#contact">Contact</a>
+            </nav>
+            <a class="order-link" href="#contact">Order a cake <span aria-hidden="true">↗</span></a>
+          </header>
+
+          <div class="hero-content">
+            <div class="hero-copy">
+              <p class="eyebrow"><span></span> Baked for your big moments</p>
+              <h1>If you can dream it, <em>we can bake it.</em></h1>
+              <p class="hero-subtitle">Made custom, made beautiful, and always made with a whole lot of love.</p>
+              <a class="primary-button" href="#cakes">Shop cake <span aria-hidden="true">↗</span></a>
+              <div class="hero-note">
+                <span class="note-stars" aria-hidden="true">★★★★★</span>
+                <span>Small-batch joy, baked fresh every day.</span>
+              </div>
+            </div>
+
+            <div class="cake-showcase" id="cakes">
+              <p class="showcase-label">A little slice of<br /><strong>happiness</strong></p>
+              <div class="cake-orbit" aria-label="Our cake flavors">
+                <div class="orbit-tag tag-red">Red Velvet <span>♥</span></div>
+                <div class="orbit-tag tag-chocolate">Chocolate<br />Truffle <span>✦</span></div>
+                <div class="orbit-tag tag-blueberry">Blueberry Bliss <span>●</span></div>
+                <div class="orbit-tag tag-pistachio">Pistachio Rose <span>✿</span></div>
+                <div class="orbit-tag tag-strawberry">Strawberry<br />White Forest <span>●</span></div>
+                <div class="orbit-tag tag-caramel">Caramel Crunch <span>✦</span></div>
+                <div class="cake-plate">
+                  <img src="images/spin.png" alt="Six colorful slices of cake on a black plate" />
+                </div>
+                <div class="cake-callout" aria-live="polite">
+                  <video class="cake-callout-arrow" src="video/arrow.webm" autoplay loop muted playsinline aria-hidden="true"></video>
+                  <svg class="cake-callout-fallback" viewBox="0 0 130 90" aria-hidden="true">
+                    <path d="M8 73C31 86 43 48 68 35c17-9 31-9 48-4" />
+                    <path d="m105 20 12 11-15 5" />
+                  </svg>
+                  <span class="cake-callout-name">Caramel Crunch</span>
+                  <small>featured flavor</small>
+                </div>
+              </div>
+              <p class="rotate-hint"><span aria-hidden="true">↻</span> Spin through our flavors</p>
+            </div>
+          </div>
+
+          <div class="hero-footer">
+            <span>Est. 2024 · Handcrafted in small batches</span>
+            <span class="scroll-cue"><span></span> Scroll to discover</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="after-hero" id="story">
+        <p class="eyebrow"><span></span> The sweet details</p>
+        <h2>Every celebration deserves<br /><em>a beautiful centerpiece.</em></h2>
+        <p id="contact">Tell us your sweetest idea and we’ll turn it into a cake worth remembering.</p>
+      </section>
+    </main>
+  </body>
+</html>
