@@ -296,14 +296,13 @@ h2 em {
 .cake-callout {
   position: absolute;
   z-index: 3;
-  top: var(--callout-top, 39%);
-  left: var(--callout-left, -25%);
+  top: 39%;
+  left: 77%;
   display: flex;
   align-items: flex-start;
   min-width: 190px;
   color: var(--ink);
   pointer-events: none;
-  transition: top 0.9s ease, left 0.9s ease;
 }
 
 .cake-callout-name {
@@ -418,8 +417,8 @@ h2 em {
   .cake-orbit { width: min(84vw, 480px); }
   .showcase-label { top: 0; }
   .cake-callout {
-    top: var(--callout-top, 31%);
-    left: var(--callout-left, -7%);
+    top: 35%;
+    left: 68%;
     min-width: 145px;
   }
   .cake-callout-name { font-size: 1.2rem; }
