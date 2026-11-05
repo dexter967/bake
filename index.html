@@ -20,7 +20,7 @@
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#cakes">Our cakes</a>
-        <a href="#menu">Menu</a>
+        <a class="menu-nav-button" href="#menu">View menu</a>
         <a href="#story">Our story</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -47,13 +47,9 @@
           </div>
         </div>
 
-        <div class="hero-wheel" aria-label="Rotating cake flavour showcase">
-          <p class="wheel-note">A little slice of<br /><strong>happiness</strong></p>
-          <div class="wheel">
-            <img src="images/spin.png" alt="Six colourful cake slices on a plate" />
-          </div>
-          <div class="wheel-flavour" aria-live="polite">Blueberry Bliss</div>
-          <span class="wheel-detail">Six flavours · one happy table</span>
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="images/image2.png" alt="A rich chocolate cake slice on a plate" />
+          <div class="photo-caption"><span>From our oven</span><strong>Made with feeling.</strong></div>
         </div>
       </section>
 
@@ -65,11 +61,11 @@
         </div>
         <div class="obsession-slider" id="collection">
           <div class="obsession-track">
-            <article class="obsession-slide is-active"><div class="obsession-copy"><span>01 / 05</span><h3>Meet your next <em>obsession.</em></h3><p>Silky chocolate, soft sponge and a little bit of drama.</p><a class="text-button" href="#menu">Order Chocolate Truffle ↗</a></div><div class="obsession-art obsession-art--chocolate"><img src="images/image2.png" alt="Chocolate cake slice" /></div></article>
-            <article class="obsession-slide"><div class="obsession-copy"><span>02 / 05</span><h3>Berry sweet,<br /><em>always.</em></h3><p>Fresh berries, cloud-soft cream and a blush of joy.</p><a class="text-button" href="#menu">Order Strawberry White Forest ↗</a></div><div class="obsession-art obsession-art--strawberry"><img src="images/spin.png" alt="Strawberry cake slice" /></div></article>
-            <article class="obsession-slide"><div class="obsession-copy"><span>03 / 05</span><h3>Come for the cake,<br /><em>stay for caramel.</em></h3><p>Golden, buttery and finished with a lovely crunch.</p><a class="text-button" href="#menu">Order Caramel Crunch ↗</a></div><div class="obsession-art obsession-art--caramel"><img src="images/spin.png" alt="Caramel cake slice" /></div></article>
-            <article class="obsession-slide"><div class="obsession-copy"><span>04 / 05</span><h3>A classic with<br /><em>character.</em></h3><p>Deep cocoa, velvet crumb and a beautiful red finish.</p><a class="text-button" href="#menu">Order Red Velvet ↗</a></div><div class="obsession-art obsession-art--red"><img src="images/spin.png" alt="Red velvet cake slice" /></div></article>
-            <article class="obsession-slide"><div class="obsession-copy"><span>05 / 05</span><h3>Bright days need<br /><em>blueberry.</em></h3><p>Juicy berries and gentle cream in every forkful.</p><a class="text-button" href="#menu">Order Blueberry Bliss ↗</a></div><div class="obsession-art obsession-art--blueberry"><img src="images/spin.png" alt="Blueberry cake slice" /></div></article>
+            <article class="obsession-slide obsession-slide--chocolate"><div class="obsession-copy"><span>01 / 05 · CHOCOLATE</span><h3>Meet your next<br /><em>sweet obsession.</em></h3><p>Silky chocolate, soft sponge and a little bit of drama.</p><a class="text-button" href="#menu">Discover Chocolate Truffle ↗</a></div><div class="obsession-art"><img src="images/image2.png" alt="Chocolate cake slice" /></div></article>
+            <article class="obsession-slide obsession-slide--strawberry"><div class="obsession-copy"><span>02 / 05 · STRAWBERRY</span><h3>Berry sweet,<br /><em>always.</em></h3><p>Fresh berries, cloud-soft cream and a blush of joy.</p><a class="text-button" href="#menu">Discover Strawberry White Forest ↗</a></div><div class="obsession-art"><img src="images/spin.png" alt="Strawberry cake selection" /></div></article>
+            <article class="obsession-slide obsession-slide--red"><div class="obsession-copy"><span>03 / 05 · RED VELVET</span><h3>A classic with<br /><em>character.</em></h3><p>Deep cocoa, velvet crumb and a beautiful red finish.</p><a class="text-button" href="#menu">Discover Red Velvet ↗</a></div><div class="obsession-art"><img src="images/spin.png" alt="Red velvet cake selection" /></div></article>
+            <article class="obsession-slide obsession-slide--blueberry"><div class="obsession-copy"><span>04 / 05 · BLUEBERRY</span><h3>Bright days need<br /><em>blueberry.</em></h3><p>Juicy berries and gentle cream in every forkful.</p><a class="text-button" href="#menu">Discover Blueberry Bliss ↗</a></div><div class="obsession-art"><img src="images/spin.png" alt="Blueberry cake selection" /></div></article>
+            <article class="obsession-slide obsession-slide--caramel"><div class="obsession-copy"><span>05 / 05 · CARAMEL</span><h3>Stay for the<br /><em>caramel.</em></h3><p>Golden, buttery and finished with a lovely crunch.</p><a class="text-button" href="#menu">Discover Caramel Crunch ↗</a></div><div class="obsession-art"><img src="images/spin.png" alt="Caramel cake selection" /></div></article>
           </div>
           <div class="obsession-dots" aria-label="Cake slides"></div>
         </div>
@@ -92,7 +88,7 @@
         </div>
         <div class="menu-table-wrap">
           <table class="menu-table">
-            <thead><tr><th>Item</th><th>Quantity / size</th><th>Price</th><th></th></tr></thead>
+            <thead><tr><th>Item</th><th>Quantity / size</th><th>500 gm</th><th>1 kg</th><th>Item price</th><th></th></tr></thead>
             <tbody id="menu-grid"></tbody>
           </table>
         </div>

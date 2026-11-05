@@ -30,7 +30,10 @@ if (menuGrid && menuFilters && menuSearch && menuEmpty) {
       const sizeText = product.half === null ? "1 kg" : product.full === null ? "Single item" : "500 gm · 1 kg";
       const prices = product.full === null ? formatPrice(product.half) : product.half === null ? formatPrice(product.full) : `${formatPrice(product.half)} · ${formatPrice(product.full)}`;
       const message = encodeURIComponent(`Hi! I'd like to order a ${product.name} from The Cake's World. Please share the available sizes and details.`);
-      return `<tr><td>${product.name}<small>${product.category}</small></td><td>${sizeText}</td><td>${prices}</td><td><a href="https://wa.me/${whatsappNumber}?text=${message}" target="_blank" rel="noopener">WhatsApp ↗</a></td></tr>`;
+      const halfPrice = product.half === null ? "—" : formatPrice(product.half);
+      const fullPrice = product.full === null ? "—" : formatPrice(product.full);
+      const itemPrice = product.half !== null && product.full !== null ? "—" : prices;
+      return `<tr><td>${product.name}<small>${product.category}</small></td><td>${sizeText}</td><td>${halfPrice}</td><td>${fullPrice}</td><td>${itemPrice}</td><td><a href="https://wa.me/${whatsappNumber}?text=${message}" target="_blank" rel="noopener">WhatsApp ↗</a></td></tr>`;
     }).join("");
     menuEmpty.hidden = visible.length > 0;
   };
