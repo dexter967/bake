@@ -3,80 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="The Cake's World creates custom cakes made with care, color, and a little magic."
-    />
+    <meta name="description" content="The Cake's World creates custom cakes made with care, color, and a little magic." />
     <title>The Cake's World | Custom cakes, made beautiful</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="The Cake's World home">
+        <span class="brand-mark"><img src="images/cookie.png" alt="" /></span>
+        <span>The Cake's World</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#cakes">Our cakes</a>
+        <a href="#story">Our story</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="order-link" href="#contact">Order a cake <span aria-hidden="true">↗</span></a>
+    </header>
+
     <main>
-      <section class="hero-stage" aria-label="The Cake's World introduction">
-        <div class="hero-card">
-          <header class="site-header">
-            <a class="brand" href="#" aria-label="The Cake's World home">
-              <span class="brand-mark" aria-hidden="true">
-                <img src="images/cookie.png" alt="" />
-              </span>
-              <span>The Cake's World</span>
-            </a>
-            <nav class="site-nav" aria-label="Main navigation">
-              <a href="#cakes">Our cakes</a>
-              <a href="#story">Our story</a>
-              <a href="#contact">Contact</a>
-            </nav>
-            <a class="order-link" href="#contact">Order a cake <span aria-hidden="true">↗</span></a>
-          </header>
-
-          <div class="hero-content">
-            <div class="hero-copy">
-              <p class="eyebrow"><span></span> Baked for your big moments</p>
-              <div class="hero-cookie-note">
-                <img src="images/cookie.png" alt="" />
-                <span>Freshly baked<br /><em>with a little magic</em></span>
-              </div>
-              <h1>If you can dream it, <em>we can bake it.</em></h1>
-              <p class="hero-subtitle">Made custom, made beautiful, and always made with a whole lot of love.</p>
-              <a class="primary-button" href="#cakes">Shop cake <span aria-hidden="true">↗</span></a>
-              <div class="hero-note">
-                <span class="note-stars" aria-hidden="true">★★★★★</span>
-                <span>Small-batch joy, baked fresh every day.</span>
-              </div>
-            </div>
-
-            <div class="cake-showcase" id="cakes">
-              <p class="showcase-label">A little slice of<br /><strong>happiness</strong></p>
-              <div class="cake-orbit" aria-label="Our cake flavors">
-                <div class="cake-plate">
-                  <img src="images/spin.png" alt="Six colorful slices of cake on a black plate" />
-                </div>
-                <div class="cake-callout" aria-live="polite">
-                  <span class="cake-callout-name">Caramel Crunch</span>
-                </div>
-              </div>
-            </div>
+      <section class="hero" aria-label="The Cake's World introduction">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Baked for your big moments</p>
+          <h1>Every celebration deserves <em>a little sweetness.</em></h1>
+          <p class="hero-subtitle">Thoughtful, handcrafted cakes made to turn your favourite moments into the ones everyone remembers.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#cakes">Shop cakes <span aria-hidden="true">↗</span></a>
+            <a class="text-button" href="#collection">Explore collection <span aria-hidden="true">↓</span></a>
           </div>
-
-          <div class="hero-footer">
-            <span>Est. 2024 · Handcrafted in small batches</span>
-            <span class="scroll-cue"><span></span> Scroll to discover</span>
+          <div class="hero-note">
+            <span class="note-stars" aria-hidden="true">★★★★★</span>
+            <span>Small-batch joy, baked fresh every day.</span>
           </div>
+          <div class="hero-cookie-note">
+            <img src="images/cookie.png" alt="" />
+            <span>Freshly baked<br /><em>with a little magic</em></span>
+          </div>
+        </div>
+
+        <div class="creation-scene" aria-label="A chocolate cake being assembled">
+          <div class="scene-heading"><span>Our signature</span><strong>Chocolate cloud</strong></div>
+          <div class="cake-assembly">
+            <div class="cake-shadow"></div>
+            <div class="cake-layer cake-bottom"></div>
+            <div class="cake-filling filling-one"></div>
+            <div class="cake-layer cake-middle"></div>
+            <div class="cake-filling filling-two"></div>
+            <div class="cake-layer cake-top"></div>
+            <div class="cake-ganache"></div>
+            <div class="cake-drip drip-one"></div>
+            <div class="cake-drip drip-two"></div>
+            <div class="cake-drip drip-three"></div>
+            <div class="cake-decoration decoration-one"></div>
+            <div class="cake-decoration decoration-two"></div>
+            <div class="cake-decoration decoration-three"></div>
+          </div>
+          <div class="scene-caption"><span>01</span><p>Layers of cocoa sponge<br />and silky ganache</p></div>
+          <img class="scene-reference" src="images/image3.jpg" alt="Chocolate lava pastry inspiration" />
         </div>
       </section>
 
-      <section class="after-hero" id="story">
-        <p class="eyebrow"><span></span> The sweet details</p>
-        <h2>Every celebration deserves<br /><em>a beautiful centerpiece.</em></h2>
-        <p id="contact">Tell us your sweetest idea and we’ll turn it into a cake worth remembering.</p>
+      <section class="collection" id="cakes">
+        <div class="section-intro">
+          <p class="eyebrow"><span></span> Made for the moment</p>
+          <h2>Find your <em>favourite.</em></h2>
+          <p>From bright berries to deep chocolate, every flavour is finished by hand and made to order.</p>
+        </div>
+        <div class="legacy-showcase">
+          <div class="legacy-plate"><img src="images/spin.png" alt="Six colorful cake slices on a black plate" /></div>
+          <div class="legacy-callout" aria-live="polite">Blueberry Bliss</div>
+          <p>Six flavours.<br /><strong>One happy table.</strong></p>
+        </div>
+        <div class="cake-slider" id="collection">
+          <article class="cake-card cake-card--rose"><span>01</span><h3>Strawberry<br />White Forest</h3><p>Soft · Floral · Fresh</p></article>
+          <article class="cake-card cake-card--brown"><span>02</span><h3>Chocolate<br />Truffle</h3><p>Rich · Silky · Decadent</p></article>
+          <article class="cake-card cake-card--blue"><span>03</span><h3>Blueberry<br />Bliss</h3><p>Bright · Creamy · Joyful</p></article>
+          <article class="cake-card cake-card--green"><span>04</span><h3>Pistachio<br />Rose</h3><p>Nutty · Delicate · Floral</p></article>
+        </div>
+      </section>
+
+      <section class="story" id="story">
+        <div class="story-image"><img src="images/image2.png" alt="A slice of chocolate cake on a plate" /></div>
+        <div class="story-copy">
+          <p class="eyebrow"><span></span> A little about us</p>
+          <h2>Beautiful things<br /><em>take time.</em></h2>
+          <p>We believe cake is more than dessert. It is the pause before the candles, the first bite after a long year, and the little detail that makes a day feel like yours.</p>
+          <a class="text-button" href="#contact">Meet the bakers <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="testimonial" aria-label="Customer testimonial">
+        <p class="quote">“The cake was almost too beautiful to cut. Almost.”</p>
+        <p class="quote-by">— Anika, birthday cake lover</p>
+      </section>
+
+      <section class="contact" id="contact">
+        <p class="eyebrow"><span></span> Let’s make it sweet</p>
+        <h2>Have a little<br /><em>dream?</em></h2>
+        <a class="primary-button" href="mailto:hello@thecakesworld.com">Start your order <span aria-hidden="true">↗</span></a>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <span>© 2024 The Cake's World</span>
+      <span>Handcrafted in small batches</span>
+      <span>hello@thecakesworld.com</span>
+    </footer>
   </body>
 </html>

@@ -1,55 +1,51 @@
-const heroCard = document.querySelector(".hero-card");
+const assembly = document.querySelector(".cake-assembly");
 
-const cakeCallout = document.querySelector(".cake-callout");
-const cakeCalloutName = document.querySelector(".cake-callout-name");
-const cakeImage = document.querySelector(".cake-plate img");
-
-if (heroCard && cakeCallout && cakeCalloutName && cakeImage) {
-  const flavors = [
-    { name: "Blueberry Bliss", tint: "#dce7ed", center: 0 },
-    { name: "Chocolate Truffle", tint: "#eadbcf", center: 300 },
-    { name: "Red Velvet", tint: "#f4d8d0", center: 240 },
-    { name: "Caramel Crunch", tint: "#f8e4c6", center: 180 },
-    { name: "Strawberry White Forest", tint: "#f8dfe0", center: 120 },
-    { name: "Pistachio Rose", tint: "#e5e9cf", center: 60 },
+if (assembly) {
+  const parts = [
+    ".cake-bottom", ".filling-one", ".cake-middle", ".filling-two",
+    ".cake-top", ".cake-ganache", ".cake-drip", ".cake-decoration"
   ];
-  const rotationDuration = 42000;
-  const labelContactAngle = 135;
-  let flavorIndex = -1;
 
-  const showFlavor = (index) => {
-    const flavor = flavors[index];
-    cakeCalloutName.textContent = flavor.name;
-    heroCard.style.setProperty("--cake-tint", flavor.tint);
-    cakeCallout.classList.remove("is-changing");
-    window.requestAnimationFrame(() => cakeCallout.classList.add("is-changing"));
-  };
+  parts.forEach((selector, index) => {
+    assembly.querySelectorAll(selector).forEach((part) => {
+      part.style.setProperty("--assembly-delay", `${index * 0.22}s`);
+    });
+  });
+}
 
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const legacyPlate = document.querySelector(".legacy-plate img");
+const legacyCallout = document.querySelector(".legacy-callout");
+
+if (legacyPlate && legacyCallout) {
+  const flavors = [
+    { name: "Blueberry Bliss", center: 0 },
+    { name: "Pistachio Rose", center: 60 },
+    { name: "Strawberry White Forest", center: 120 },
+    { name: "Caramel Crunch", center: 180 },
+    { name: "Red Velvet", center: 240 },
+    { name: "Chocolate Truffle", center: 300 },
+  ];
   const startedAt = performance.now();
+  const duration = 42000;
+  let current = "";
 
-  const animateCake = (now) => {
-    const elapsed = prefersReducedMotion ? 0 : now - startedAt;
-    const rotation = (elapsed % rotationDuration) / rotationDuration * 360;
-    const sourceAngle = (labelContactAngle - rotation + 360) % 360;
-    const nextFlavorIndex = flavors.reduce((closestIndex, flavor, index) => {
-      const distance = Math.abs(
-        ((sourceAngle - flavor.center + 540) % 360) - 180
-      );
-      const closestDistance = Math.abs(
-        ((sourceAngle - flavors[closestIndex].center + 540) % 360) - 180
-      );
-      return distance < closestDistance ? index : closestIndex;
-    }, 0);
+  const updateFlavor = (now) => {
+    const rotation = ((now - startedAt) % duration) / duration * 360;
+    const sourceAngle = (135 - rotation + 360) % 360;
+    const flavor = flavors.reduce((closest, candidate) => {
+      const distance = Math.abs(((sourceAngle - candidate.center + 540) % 360) - 180);
+      const closestDistance = Math.abs(((sourceAngle - closest.center + 540) % 360) - 180);
+      return distance < closestDistance ? candidate : closest;
+    });
 
-    cakeImage.style.transform = `rotate(${rotation}deg)`;
-    if (nextFlavorIndex !== flavorIndex) {
-      flavorIndex = nextFlavorIndex;
-      showFlavor(flavorIndex);
+    if (flavor.name !== current) {
+      current = flavor.name;
+      legacyCallout.textContent = current;
     }
-
-    window.requestAnimationFrame(animateCake);
+    window.requestAnimationFrame(updateFlavor);
   };
 
-  window.requestAnimationFrame(animateCake);
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    window.requestAnimationFrame(updateFlavor);
+  }
 }
