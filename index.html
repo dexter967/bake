@@ -35,7 +35,7 @@
           <p class="hero-subtitle">Thoughtful, handcrafted cakes made to turn your favourite moments into the ones everyone remembers.</p>
           <div class="hero-actions">
             <a class="primary-button" href="#menu">Shop cakes <span aria-hidden="true">↗</span></a>
-              <a class="text-button" href="#cakes">Explore collection <span aria-hidden="true">↓</span></a>
+            <a class="text-button" href="#cakes">Explore collection <span aria-hidden="true">↓</span></a>
           </div>
           <div class="hero-note">
             <span class="note-stars" aria-hidden="true">★★★★★</span>
@@ -47,9 +47,13 @@
           </div>
         </div>
 
-        <div class="hero-photo-wrap">
-          <img class="hero-photo" src="images/image2.png" alt="A rich chocolate cake slice on a plate" />
-          <div class="photo-caption"><span>From our oven</span><strong>Made with feeling.</strong></div>
+        <div class="hero-wheel" aria-label="Rotating cake flavour showcase">
+          <p class="wheel-note">A little slice of<br /><strong>happiness</strong></p>
+          <div class="wheel">
+            <img src="images/spin.png" alt="Six colourful cake slices on a plate" />
+          </div>
+          <div class="wheel-flavour" aria-live="polite">Blueberry Bliss</div>
+          <span class="wheel-detail">Six flavours · one happy table</span>
         </div>
       </section>
 
@@ -59,16 +63,15 @@
           <h2>Find your <em>favourite.</em></h2>
           <p>From bright berries to deep chocolate, every flavour is finished by hand and made to order.</p>
         </div>
-        <div class="legacy-showcase">
-          <div class="legacy-plate"><img src="images/spin.png" alt="Six colorful cake slices on a black plate" /></div>
-          <div class="legacy-callout" aria-live="polite">Blueberry Bliss</div>
-          <p>Six flavours.<br /><strong>One happy table.</strong></p>
-        </div>
-        <div class="cake-slider" id="collection">
-          <article class="cake-card cake-card--rose"><span>01</span><h3>Strawberry<br />White Forest</h3><p>Soft · Floral · Fresh</p></article>
-          <article class="cake-card cake-card--brown"><span>02</span><h3>Chocolate<br />Truffle</h3><p>Rich · Silky · Decadent</p></article>
-          <article class="cake-card cake-card--blue"><span>03</span><h3>Blueberry<br />Bliss</h3><p>Bright · Creamy · Joyful</p></article>
-          <article class="cake-card cake-card--green"><span>04</span><h3>Pistachio<br />Rose</h3><p>Nutty · Delicate · Floral</p></article>
+        <div class="obsession-slider" id="collection">
+          <div class="obsession-track">
+            <article class="obsession-slide is-active"><div class="obsession-copy"><span>01 / 05</span><h3>Meet your next <em>obsession.</em></h3><p>Silky chocolate, soft sponge and a little bit of drama.</p><a class="text-button" href="#menu">Order Chocolate Truffle ↗</a></div><div class="obsession-art obsession-art--chocolate"><img src="images/image2.png" alt="Chocolate cake slice" /></div></article>
+            <article class="obsession-slide"><div class="obsession-copy"><span>02 / 05</span><h3>Berry sweet,<br /><em>always.</em></h3><p>Fresh berries, cloud-soft cream and a blush of joy.</p><a class="text-button" href="#menu">Order Strawberry White Forest ↗</a></div><div class="obsession-art obsession-art--strawberry"><img src="images/spin.png" alt="Strawberry cake slice" /></div></article>
+            <article class="obsession-slide"><div class="obsession-copy"><span>03 / 05</span><h3>Come for the cake,<br /><em>stay for caramel.</em></h3><p>Golden, buttery and finished with a lovely crunch.</p><a class="text-button" href="#menu">Order Caramel Crunch ↗</a></div><div class="obsession-art obsession-art--caramel"><img src="images/spin.png" alt="Caramel cake slice" /></div></article>
+            <article class="obsession-slide"><div class="obsession-copy"><span>04 / 05</span><h3>A classic with<br /><em>character.</em></h3><p>Deep cocoa, velvet crumb and a beautiful red finish.</p><a class="text-button" href="#menu">Order Red Velvet ↗</a></div><div class="obsession-art obsession-art--red"><img src="images/spin.png" alt="Red velvet cake slice" /></div></article>
+            <article class="obsession-slide"><div class="obsession-copy"><span>05 / 05</span><h3>Bright days need<br /><em>blueberry.</em></h3><p>Juicy berries and gentle cream in every forkful.</p><a class="text-button" href="#menu">Order Blueberry Bliss ↗</a></div><div class="obsession-art obsession-art--blueberry"><img src="images/spin.png" alt="Blueberry cake slice" /></div></article>
+          </div>
+          <div class="obsession-dots" aria-label="Cake slides"></div>
         </div>
       </section>
 
@@ -87,7 +90,12 @@
           </label>
           <div class="menu-filters" id="menu-filters" aria-label="Menu categories"></div>
         </div>
-        <div class="menu-grid" id="menu-grid"></div>
+        <div class="menu-table-wrap">
+          <table class="menu-table">
+            <thead><tr><th>Item</th><th>Quantity / size</th><th>Price</th><th></th></tr></thead>
+            <tbody id="menu-grid"></tbody>
+          </table>
+        </div>
         <p class="menu-empty" id="menu-empty" hidden>No treats match that search yet. Try another flavour.</p>
       </section>
 

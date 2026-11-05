@@ -27,10 +27,10 @@ if (menuGrid && menuFilters && menuSearch && menuEmpty) {
     const query = menuSearch.value.trim().toLowerCase();
     const visible = products.filter((product) => (activeCategory === "All" || product.category === activeCategory) && product.name.toLowerCase().includes(query));
     menuGrid.innerHTML = visible.map((product) => {
-      const sizeText = product.half === null ? "1 kg" : product.full === null ? "Single price" : "500 gm · 1 kg";
+      const sizeText = product.half === null ? "1 kg" : product.full === null ? "Single item" : "500 gm · 1 kg";
       const prices = product.full === null ? formatPrice(product.half) : product.half === null ? formatPrice(product.full) : `${formatPrice(product.half)} · ${formatPrice(product.full)}`;
       const message = encodeURIComponent(`Hi! I'd like to order a ${product.name} from The Cake's World. Please share the available sizes and details.`);
-      return `<article class="menu-card"><p>${product.category}</p><h3>${product.name}</h3><span>${sizeText}</span><strong>${prices}</strong><a href="https://wa.me/${whatsappNumber}?text=${message}" target="_blank" rel="noopener">Order on WhatsApp <span aria-hidden="true">↗</span></a></article>`;
+      return `<tr><td>${product.name}<small>${product.category}</small></td><td>${sizeText}</td><td>${prices}</td><td><a href="https://wa.me/${whatsappNumber}?text=${message}" target="_blank" rel="noopener">WhatsApp ↗</a></td></tr>`;
     }).join("");
     menuEmpty.hidden = visible.length > 0;
   };
