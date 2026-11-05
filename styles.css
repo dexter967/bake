@@ -48,35 +48,13 @@ h1 em, h2 em { color: var(--rose); font-family: "Caveat", cursive; font-size: 1.
 .hero-cookie-note img { width: 53px; height: 53px; object-fit: contain; filter: drop-shadow(0 7px 7px rgba(67, 32, 19, .15)); }
 .hero-cookie-note em { color: var(--rose); font-size: 1.1em; }
 
-.creation-scene { position: relative; display: grid; min-height: 540px; place-items: center; padding: 40px 0; }
-.creation-scene::before { position: absolute; inset: 12% 2% 5%; border-radius: 48% 52% 43% 57%; background: #efe0d5; content: ""; }
-.scene-heading { position: absolute; z-index: 2; top: 3%; right: 7%; display: flex; flex-direction: column; align-items: flex-end; gap: 3px; font-family: "Caveat", cursive; font-size: 1.3rem; transform: rotate(4deg); }
-.scene-heading span { color: var(--muted); }
-.scene-heading strong { color: var(--ink); font-size: 1.65rem; }
-.cake-assembly { position: relative; z-index: 1; width: min(42vw, 430px); height: 360px; margin-top: 55px; animation: cake-float 6s ease-in-out infinite; }
-.cake-shadow { position: absolute; right: 4%; bottom: -5px; left: 4%; height: 34px; border-radius: 50%; background: rgba(59, 33, 28, .2); filter: blur(13px); }
-.cake-layer, .cake-filling, .cake-ganache { position: absolute; right: 8%; left: 8%; border-radius: 16px 16px 12px 12px; animation: cake-build .8s cubic-bezier(.2,.8,.2,1) var(--assembly-delay, 0s) both; }
-.cake-layer { height: 77px; background: linear-gradient(90deg, #43231d, #63352a 45%, #3b201b); box-shadow: inset 0 -12px 0 rgba(26, 10, 7, .18), 0 9px 0 #2c1713; }
-.cake-bottom { bottom: 20px; }
-.cake-middle { bottom: 116px; }
-.cake-top { bottom: 212px; height: 83px; background: linear-gradient(90deg, #4a251f, #714036 45%, #41211b); }
-.cake-filling { height: 18px; border-radius: 50%; background: linear-gradient(#e5a078, #bc6e55); box-shadow: 0 3px 4px rgba(40, 13, 9, .3); }
-.filling-one { bottom: 98px; }
-.filling-two { bottom: 194px; }
-.cake-ganache { bottom: 276px; z-index: 2; height: 32px; border-radius: 50%; background: linear-gradient(#3a1c17, #663126); box-shadow: 0 5px 0 #2a1411; }
-.cake-drip { position: absolute; z-index: 3; bottom: 254px; width: 18px; height: 42px; border-radius: 0 0 12px 12px; background: #3b1b16; animation: cake-build .7s cubic-bezier(.2,.8,.2,1) var(--assembly-delay, 0s) both; }
-.drip-one { left: 25%; } .drip-two { left: 49%; height: 56px; } .drip-three { right: 26%; height: 29px; }
-.cake-decoration { position: absolute; z-index: 4; bottom: 300px; width: 31px; height: 31px; border-radius: 50% 45% 50% 40%; background: #b96c57; animation: cake-build .7s cubic-bezier(.2,.8,.2,1) var(--assembly-delay, 0s) both; }
-.decoration-one { left: 31%; } .decoration-two { left: 49%; bottom: 316px; background: var(--rose); } .decoration-three { right: 31%; bottom: 303px; background: #e5a078; }
-.scene-caption { position: absolute; z-index: 2; bottom: 1%; left: 1%; display: flex; align-items: flex-start; gap: 12px; color: var(--muted); font-family: "Caveat", cursive; }
-.scene-caption span { color: var(--rose); font-family: "DM Sans", sans-serif; font-size: .7rem; font-weight: 700; }
-.scene-caption p { margin: 0; font-size: 1.18rem; line-height: 1.05; }
-.scene-reference { position: absolute; right: 2%; bottom: 7%; z-index: 2; width: 84px; height: 112px; border: 5px solid var(--cream); box-shadow: 0 12px 25px rgba(59, 33, 28, .18); object-fit: cover; transform: rotate(7deg); }
-@keyframes cake-float { 50% { transform: translateY(-10px); } }
-@keyframes cake-build {
-  from { opacity: 0; transform: translateY(-42px) scale(.92); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
+.hero-photo-wrap { position: relative; display: grid; min-height: 620px; place-items: center; }
+.hero-photo-wrap::before { position: absolute; inset: 8% -18% 0 3%; border-radius: 50%; background: #eef0d7; content: ""; }
+.hero-photo { position: relative; z-index: 1; display: block; width: min(100%, 560px); height: 650px; object-fit: cover; object-position: center 47%; border-radius: 48% 48% 44% 44%; mix-blend-mode: multiply; -webkit-mask-image: radial-gradient(ellipse 68% 72% at 50% 48%, #000 43%, rgba(0, 0, 0, .92) 64%, transparent 97%); mask-image: radial-gradient(ellipse 68% 72% at 50% 48%, #000 43%, rgba(0, 0, 0, .92) 64%, transparent 97%); animation: photo-float 7s ease-in-out infinite; }
+.photo-caption { position: absolute; z-index: 2; right: 2%; bottom: 4%; display: flex; flex-direction: column; align-items: flex-end; font-family: "Caveat", cursive; transform: rotate(-5deg); }
+.photo-caption span { color: var(--muted); font-size: 1.2rem; }
+.photo-caption strong { color: var(--ink); font-size: 1.75rem; }
+@keyframes photo-float { 50% { transform: translateY(-9px); } }
 
 .collection { padding: 130px max(5%, calc((100% - 1180px) / 2)) 145px; color: var(--cream); background: var(--brown); }
 .section-intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 58px; }
@@ -99,6 +77,27 @@ h1 em, h2 em { color: var(--rose); font-family: "Caveat", cursive; font-size: 1.
 .cake-card p { margin: 0; font-family: "Caveat", cursive; font-size: 1.2rem; }
 .cake-card--rose { background: #e9b0a7; } .cake-card--brown { color: var(--cream); background: #70443b; } .cake-card--blue { background: #c4d6db; } .cake-card--green { background: #cbd4b2; }
 
+.menu-section { padding: 140px max(5%, calc((100% - 1180px) / 2)); background: #f5e4d8; }
+.menu-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 35px; margin-bottom: 48px; }
+.menu-heading > p { max-width: 290px; margin: 0 0 5px; color: var(--muted); font-size: .88rem; line-height: 1.7; }
+.menu-tools { display: grid; gap: 22px; margin-bottom: 38px; }
+.menu-search input { width: 100%; padding: 16px 18px; border: 1px solid rgba(59, 33, 28, .25); border-radius: 2px; color: var(--ink); background: rgba(252, 246, 239, .72); font: inherit; outline: none; }
+.menu-search input:focus { border-color: var(--rose); box-shadow: 0 0 0 3px rgba(216, 137, 125, .15); }
+.menu-filters { display: flex; flex-wrap: wrap; gap: 9px; }
+.menu-filters button { padding: 9px 13px; border: 1px solid rgba(59, 33, 28, .25); border-radius: 20px; color: var(--ink); background: transparent; cursor: pointer; font: inherit; font-size: .72rem; }
+.menu-filters button:hover, .menu-filters button.is-active { color: var(--cream); background: var(--ink); }
+.menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.menu-card { display: flex; min-height: 202px; flex-direction: column; padding: 21px; background: rgba(252, 246, 239, .76); }
+.menu-card > p { margin: 0 0 15px; color: #aa6d60; font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.menu-card h3 { margin: 0 0 11px; font-family: "Playfair Display", serif; font-size: 1.35rem; font-weight: 500; line-height: 1; }
+.menu-card > span { color: var(--muted); font-size: .7rem; }
+.menu-card strong { margin-top: 8px; font-size: .85rem; }
+.menu-card a { align-self: flex-start; margin-top: auto; padding-top: 18px; color: #8d4e43; font-size: .7rem; font-weight: 700; }
+.menu-card a:hover { color: var(--rose); }
+.menu-card a span { margin-left: 5px; }
+.menu-empty { margin: 25px 0 0; color: var(--muted); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
 .story { display: grid; grid-template-columns: 1fr 1fr; gap: 10vw; align-items: center; width: min(90%, 1080px); margin: 0 auto; padding: 150px 0; }
 .story-image { height: 540px; overflow: hidden; border-radius: 48% 48% 4px 4px; background: #4a2d25; }
 .story-image img { width: 100%; height: 100%; object-fit: cover; }
@@ -108,6 +107,8 @@ h1 em, h2 em { color: var(--rose); font-family: "Caveat", cursive; font-size: 1.
 .quote-by { margin: 28px 0 0; color: rgba(252, 246, 239, .65); font-family: "Caveat", cursive; font-size: 1.3rem; }
 .contact { padding: 140px 8%; background: var(--peach); }
 .contact h2 { margin-bottom: 36px; }
+.business-details { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 42px; color: var(--muted); font-size: .8rem; }
+.business-details a { color: var(--ink); font-weight: 700; }
 .site-footer { display: flex; justify-content: space-between; padding: 25px 5%; color: rgba(252, 246, 239, .65); background: var(--brown); font-size: .68rem; letter-spacing: .04em; }
 
 @media (max-width: 800px) {
@@ -117,15 +118,19 @@ h1 em, h2 em { color: var(--rose); font-family: "Caveat", cursive; font-size: 1.
   .hero-copy { padding-left: 0; }
   h1 { font-size: clamp(3.2rem, 13vw, 5rem); }
   .hero-cookie-note { margin: 45px 0 0 18%; }
-  .creation-scene { min-height: 485px; margin-top: 25px; }
-  .cake-assembly { width: min(88vw, 430px); }
-  .scene-reference { right: 0; width: 67px; height: 90px; }
+  .hero-photo-wrap { min-height: 540px; margin-top: 25px; }
+  .hero-photo { width: min(100%, 520px); height: 560px; }
+  .photo-caption { right: 4%; bottom: 1%; }
   .collection { padding-top: 90px; padding-bottom: 90px; }
   .section-intro { display: block; }
   .section-intro > p:last-child { margin-top: 25px; }
   .cake-slider { grid-template-columns: repeat(2, 1fr); }
   .legacy-showcase { min-height: 340px; margin-bottom: 42px; }
   .legacy-callout { bottom: 24px; left: 6%; }
+  .menu-section { padding-top: 90px; padding-bottom: 90px; }
+  .menu-heading { display: block; }
+  .menu-heading > p { margin-top: 25px; }
+  .menu-grid { grid-template-columns: repeat(2, 1fr); }
   .cake-card { min-height: 230px; }
   .story { grid-template-columns: 1fr; gap: 50px; padding: 90px 0; }
   .story-image { height: 430px; }
@@ -136,15 +141,17 @@ h1 em, h2 em { color: var(--rose); font-family: "Caveat", cursive; font-size: 1.
   .brand { font-size: 1rem; }
   .order-link { font-size: .68rem; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 18px; }
-  .creation-scene { min-height: 430px; margin-right: -6%; margin-left: -6%; }
-  .cake-assembly { height: 300px; margin-top: 55px; transform: scale(.88); }
-  .cake-layer { height: 63px; } .cake-bottom { bottom: 20px; } .cake-middle { bottom: 98px; } .cake-top { bottom: 176px; height: 70px; }
-  .filling-one { bottom: 82px; } .filling-two { bottom: 160px; } .cake-ganache { bottom: 231px; } .cake-drip { bottom: 210px; } .cake-decoration { bottom: 256px; }
-  .scene-heading { right: 0; font-size: 1.05rem; } .scene-heading strong { font-size: 1.35rem; }
+  .hero-photo-wrap { min-height: 430px; margin-right: -10%; margin-left: -10%; }
+  .hero-photo { height: 470px; }
+  .photo-caption { right: 4%; font-size: .9rem; }
+  .photo-caption strong { font-size: 1.35rem; }
   .cake-slider { gap: 10px; }
   .cake-card { min-height: 185px; padding: 15px; }
   .cake-card h3 { font-size: 1.35rem; }
   .story-image { height: 360px; }
+  .menu-grid { grid-template-columns: 1fr; }
+  .menu-card { min-height: 185px; }
+  .business-details { flex-direction: column; gap: 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="menu.js" defer></script>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -19,6 +20,7 @@
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#cakes">Our cakes</a>
+        <a href="#menu">Menu</a>
         <a href="#story">Our story</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -32,8 +34,8 @@
           <h1>Every celebration deserves <em>a little sweetness.</em></h1>
           <p class="hero-subtitle">Thoughtful, handcrafted cakes made to turn your favourite moments into the ones everyone remembers.</p>
           <div class="hero-actions">
-            <a class="primary-button" href="#cakes">Shop cakes <span aria-hidden="true">↗</span></a>
-            <a class="text-button" href="#collection">Explore collection <span aria-hidden="true">↓</span></a>
+            <a class="primary-button" href="#menu">Shop cakes <span aria-hidden="true">↗</span></a>
+              <a class="text-button" href="#cakes">Explore collection <span aria-hidden="true">↓</span></a>
           </div>
           <div class="hero-note">
             <span class="note-stars" aria-hidden="true">★★★★★</span>
@@ -45,25 +47,9 @@
           </div>
         </div>
 
-        <div class="creation-scene" aria-label="A chocolate cake being assembled">
-          <div class="scene-heading"><span>Our signature</span><strong>Chocolate cloud</strong></div>
-          <div class="cake-assembly">
-            <div class="cake-shadow"></div>
-            <div class="cake-layer cake-bottom"></div>
-            <div class="cake-filling filling-one"></div>
-            <div class="cake-layer cake-middle"></div>
-            <div class="cake-filling filling-two"></div>
-            <div class="cake-layer cake-top"></div>
-            <div class="cake-ganache"></div>
-            <div class="cake-drip drip-one"></div>
-            <div class="cake-drip drip-two"></div>
-            <div class="cake-drip drip-three"></div>
-            <div class="cake-decoration decoration-one"></div>
-            <div class="cake-decoration decoration-two"></div>
-            <div class="cake-decoration decoration-three"></div>
-          </div>
-          <div class="scene-caption"><span>01</span><p>Layers of cocoa sponge<br />and silky ganache</p></div>
-          <img class="scene-reference" src="images/image3.jpg" alt="Chocolate lava pastry inspiration" />
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="images/image2.png" alt="A rich chocolate cake slice on a plate" />
+          <div class="photo-caption"><span>From our oven</span><strong>Made with feeling.</strong></div>
         </div>
       </section>
 
@@ -86,8 +72,27 @@
         </div>
       </section>
 
+      <section class="menu-section" id="menu">
+        <div class="menu-heading">
+          <div>
+            <p class="eyebrow"><span></span> Explore our menu</p>
+            <h2>Freshly baked.<br /><em>Beautifully crafted.</em></h2>
+          </div>
+          <p>Choose a category, compare sizes and send your favourite straight to WhatsApp.</p>
+        </div>
+        <div class="menu-tools">
+          <label class="menu-search">
+            <span class="sr-only">Search menu</span>
+            <input id="menu-search" type="search" placeholder="Search cakes, pastries or snacks" />
+          </label>
+          <div class="menu-filters" id="menu-filters" aria-label="Menu categories"></div>
+        </div>
+        <div class="menu-grid" id="menu-grid"></div>
+        <p class="menu-empty" id="menu-empty" hidden>No treats match that search yet. Try another flavour.</p>
+      </section>
+
       <section class="story" id="story">
-        <div class="story-image"><img src="images/image2.png" alt="A slice of chocolate cake on a plate" /></div>
+        <div class="story-image"><img src="images/image3.jpg" alt="Chocolate cake poster inspiration" /></div>
         <div class="story-copy">
           <p class="eyebrow"><span></span> A little about us</p>
           <h2>Beautiful things<br /><em>take time.</em></h2>
@@ -105,6 +110,11 @@
         <p class="eyebrow"><span></span> Let’s make it sweet</p>
         <h2>Have a little<br /><em>dream?</em></h2>
         <a class="primary-button" href="mailto:hello@thecakesworld.com">Start your order <span aria-hidden="true">↗</span></a>
+        <div class="business-details">
+          <a href="tel:+919048222977">90482 22977</a>
+          <span>Pathanamthitta</span>
+          <span>Dining available · Home delivery available</span>
+        </div>
       </section>
     </main>
 
